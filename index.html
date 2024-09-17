@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      #box {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+     
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="txt">Hide</h1>
+      <button id="hide">Hide</button>
+    </div>
+    <div>
+      <h1 id="txt1">fadein</h1>
+      <button id="fadeout">fadeout</button>
+    </div>
+    <div>
+      <p>Animation</p>
+      <div id="box"></div>
+      <button id="anim" type="button">Animation</button>
+    </div>
+    <div>
+      <h1 id="txt1">fadein</h1>
+      <button id="fadeout">fadeout</button>
+    </div>
+    <div>
+        <p id="ntxt">Add text</p>
+        <button id="addtxt">Addtext</button>
+    </div>
+    <div>
+      <h1 id="slidetxt">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
+        laudantium, tenetur explicabo consequuntur repellendus unde nobis iusto?
+        Quas, labore reprehenderit alias aperiam quos sequi ut, architecto
+        facilis veniam veritatis accusamus.
+      </h1>
+      <button id="slide">Slide</button>
+    </div>
+    <div>
+        <p class="singlevalue">Value</p>
+        <select id="selectv">
+            <option >value1</option>
+            <option >value2</option>
+            <option >value3</option>
+            <option >value4</option>
+        </select>
+    </div>
+    <script>
+      $("#hide").click(function () {
+        $("#txt").hide();
+      });
+      $("#fadeout").click(function () {
+        $("#txt1").fadeOut();
+      });
+      $("#slide").click(function () {
+        $("#slidetxt").slideToggle(3000);
+      });
+      $("#anim").click(function () {
+        $("#box").animate({
+          left: "250px",
+          opacity: "0.5",
+          height: "150px",
+          width: "150px",
+        });
+      });
+      $('#addtxt').click(function(e) {
+        $('#ntxt').html("<h2>Add</h2>");
+      })
+      function changevlue() {
+        var singv = $('#selectv').val();
+        $('.singlevalue').html('value :'+ '' + singv);
+          }
+        $('select').change(changevlue);
+        changevlue();
+    
+    </script>
+  </body>
+</html>
